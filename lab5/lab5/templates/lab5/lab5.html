@@ -1,0 +1,17 @@
+{% extends 'lab5/base.html' %}
+	{% block content %}
+	<div class="row">
+		{% for el in Text %}
+			{% if el.id == 3 %}
+				<p>Жизнь-боль</p>
+			{% else %}
+				<a href="{% url 'info' pk=el.id %}">
+	        		<div class="col-md-4">
+	          		<h2>{{el.author}}</h2>
+	          		<p>{{el.text}} </p>
+	        		</div>
+	    		</a>
+	    	{% endif %}
+		{% endfor %}
+	</div>
+	{% endblock %}
